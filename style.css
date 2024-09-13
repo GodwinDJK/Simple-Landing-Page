@@ -2,6 +2,25 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    background-image: url(./public/images/tech-background.jpg);
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    position: relative;
+    height: 100vh;
+}
+
+body::before {
+    content: ""; /*This property is required for ::before to work. We set it to an empty string because we don’t need to display any textual content in this pseudo-element.
+    The pseudo-element exists purely for visual effect (the overlay), not actual content.*/    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Black color with 50% opacity */
+    z-index: -1; /* Ensures it stays behind the content */
 }
 
 .navbar {
@@ -121,4 +140,21 @@ body {
     .mobile-menu.active {
         display: block;
     }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    justify-content: center;
+}
+
+h1 {
+    color: #b1bac4;
+    font-size: 9;
+}
+
+p {
+    color: #b1bac4;
 }
