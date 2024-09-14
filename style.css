@@ -1,26 +1,28 @@
-
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    /*-apple-system, BlinkMacSystemFont: These are system fonts for Apple and Blink-based browsers (like Chrome).
+    "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif: These are popular web-safe fonts, providing a fallback if the system fonts are not available.
+    "Apple Color Emoji", "Segoe UI Emoji": These fonts handle emoji rendering on Apple and Microsoft systems.*/    
     background-image: url(./public/images/tech-background.jpg);
-    background-size: cover; /* Ensures the image covers the entire screen */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
     height: 100vh;
+    color: #f4f4f4; /* Improved contrast */
 }
 
 body::before {
-    content: ""; /*This property is required for ::before to work. We set it to an empty string because we don’t need to display any textual content in this pseudo-element.
-    The pseudo-element exists purely for visual effect (the overlay), not actual content.*/    
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Black color with 50% opacity */
-    z-index: -1; /* Ensures it stays behind the content */
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better readability */
+    z-index: -1;
 }
 
 .navbar {
@@ -36,6 +38,7 @@ body::before {
 
 .navbar-logo img {
     height: 40px;
+    border-radius: 15%;
 }
 
 .navbar-links {
@@ -123,6 +126,26 @@ body::before {
     margin-top: 10px;
 }
 
+h1 {
+    background: linear-gradient(#888888, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* This makes the text itself transparent */
+    
+    font-size: 4.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+p {
+    color: rgb(177, 186, 196);
+    font-size: 2rem;
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 10px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar-links, .navbar-secondary {
@@ -140,6 +163,26 @@ body::before {
     .mobile-menu.active {
         display: block;
     }
+
+    h1 {
+        background: linear-gradient(#888888, #ffffff);
+        /*Ensures the gradient is only applied to the text and*/
+        -webkit-background-clip: text;
+        background-clip: text;
+        /*not the entire background.*/  
+        color: transparent; /* This makes the text itself transparent */
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: rgb(177, 186, 196);
+        font-size: 1.25rem;
+        text-align: center;
+        max-width: 600px;
+        margin-bottom: 10px;
+    }
 }
 
 .main {
@@ -150,11 +193,18 @@ body::before {
     justify-content: center;
 }
 
-h1 {
-    color: #b1bac4;
-    font-size: 9;
+
+button {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-p {
-    color: #b1bac4;
+button:hover {
+    background-color: #eee8e8;
 }
